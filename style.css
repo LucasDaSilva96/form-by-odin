@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+:root {
+  --red-color: #a4161a;
+  --yellow-color: #ffc300;
+  --black-color: #000814;
+  --blue-color: #001d3d;
+  --white-color: #ffffff;
+  --yellow-txt-color: #ffd60a;
+
+  --border-radius: 20px;
+}
+
+body {
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  background-color: var(--black-color);
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.mercedes-pic {
+  height: 500px;
+  width: auto;
+  border-radius: var(--border-radius);
+}
+
+h1 {
+  text-align: center;
+  color: var(--red-color);
+  font-size: 46px;
+  font-weight: bold;
+}
+
+header {
+  padding: 10px;
+  width: 100vw;
+  height: 70px;
+  background-color: var(--yellow-color);
+}
+
+h2 {
+  font-size: 18px;
+  color: var(--yellow-txt-color);
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.container {
+  margin-top: 30px;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  position: absolute;
+  display: flex;
+  gap: 2rem;
+}
+
+form {
+  padding: 10px;
+  background-color: var(--yellow-color);
+  height: 400px;
+  margin-bottom: 10px;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 50px;
+  column-gap: 25px;
+}
+
+.form-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-txt {
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  height: 80px;
+  text-align: center;
+  padding: 30px 0 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+span {
+  color: var(--white-color);
+}
+
+a:link,
+a {
+  color: var(--white-color);
+  border-bottom: 3px solid var(--yellow-color);
+}
+
+label {
+  font-weight: 600;
+  padding: 7px;
+}
+
+.sub-btn {
+  position: absolute;
+  font-size: 20px;
+  width: 200px;
+  padding: 10px;
+  bottom: 40px;
+  right: 90px;
+  font-weight: bold;
+  background-color: var(--blue-color);
+  color: var(--yellow-color);
+  border-radius: var(--border-radius);
+}
