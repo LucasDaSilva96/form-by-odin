@@ -102,6 +102,7 @@ a:link,
 a {
   color: var(--white-color);
   border-bottom: 3px solid var(--yellow-color);
+  text-decoration: none;
 }
 
 label {
@@ -120,4 +121,19 @@ label {
   background-color: var(--blue-color);
   color: var(--yellow-color);
   border-radius: var(--border-radius);
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.pic-owner {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.7;
+  background-color: #0008148a;
 }
