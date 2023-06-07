@@ -166,3 +166,61 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.body-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-2 {
+  margin-top: 50px;
+}
+
+.confirmation-box {
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  background-color: var(--yellow-color);
+  border-radius: var(--border-radius);
+  box-shadow: rgba(167, 167, 167, 0.39) 0px 22px 70px 4px;
+}
+
+.confirm-h3 {
+  border-radius: 10px 10px 0 0;
+}
+
+.confirm-txt {
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.user-information-box {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 5px;
+}
+
+.user-information-box div {
+  border-bottom: 1px solid var(--blue-color);
+}
+
+.go-back-container {
+  margin-top: 40px;
+}
+
+.back-btn {
+  background-color: var(--blue-color);
+  color: var(--yellow-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.back-btn:active {
+  transform: scale(1.08);
+}
