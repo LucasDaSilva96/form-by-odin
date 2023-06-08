@@ -54,7 +54,7 @@ h2 {
 .container {
   margin-top: 30px;
   right: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(50%, -50%);
   position: absolute;
   display: flex;
@@ -389,5 +389,38 @@ input::-webkit-inner-spin-button {
   50%,
   100% {
     bottom: 100%;
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 750px) {
+  .confirmation-box {
+    width: 350px;
+    height: 360px;
+  }
+
+  .confirm-txt p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 690px) {
+  .img-container {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    width: 350px;
+  }
+
+  .join-form label {
+    font-size: 14px;
+  }
+
+  .join-form input {
+    width: 155px;
   }
 }
