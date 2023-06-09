@@ -396,12 +396,24 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 750px) {
   .confirmation-box {
+    position: relative;
     width: 350px;
     height: 360px;
   }
 
   .confirm-txt p {
     font-size: 12px;
+  }
+
+  .user-information-box {
+    font-size: 12px;
+  }
+
+  .back-btn {
+    position: absolute;
+    padding: 15px;
+    top: 105%;
+    right: 35%;
   }
 }
 
