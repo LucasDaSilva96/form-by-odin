@@ -41,7 +41,7 @@ let phone_nr;
 let email;
 // This is for making sure that the user must have password 1 === password 2 before
 // creating an account
-if (window.location.pathname === "/index.html") {
+if (window.location.pathname === "/form-by-odin/index.html") {
   password_confirm_input.addEventListener("input", function () {
     check_password_match(password_input, password_confirm_input);
     if (
@@ -89,7 +89,7 @@ if (window.location.pathname === "/index.html") {
 }
 
 // This function is for changing the welcome-content to match the user's information
-if (window.location.pathname === "/confirm.html") {
+if (window.location.pathname === "/form-by-odin/confirm.html") {
   // This is for making sure that the html is loaded before Document Object Manipulation
   document.addEventListener("DOMContentLoaded", function () {
     // This is for retrieving data from the local storage and displaying it on the confirm.html
@@ -114,7 +114,7 @@ if (window.location.pathname === "/confirm.html") {
   document.querySelector("time").textContent = year;
 }
 
-if (window.location.pathname === "/login.html") {
+if (window.location.pathname === "/form-by-odin/login.html") {
   // This for updating the year on the footer automatically
   const date = new Date();
   const year = date.getFullYear();
