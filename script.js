@@ -107,4 +107,16 @@ if (window.location.pathname === "/confirm.html") {
   document.querySelector(".back-btn").addEventListener("click", function () {
     sessionStorage.clear();
   });
+
+  // This for updating the year on the footer automatically
+  const date = new Date();
+  const year = date.getFullYear();
+  document.querySelector("time").textContent = year;
+}
+
+if (window.location.pathname === "/login.html") {
+  // This for updating the year on the footer automatically
+  const date = new Date();
+  const year = date.getFullYear();
+  document.querySelector("time").textContent = year;
 }
