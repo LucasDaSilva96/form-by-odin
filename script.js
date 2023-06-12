@@ -94,9 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       email = user_email.value;
     });
 
-    create_acc_btn.addEventListener("click", function (event) {
-      // Prevent the default form submission
-      event.preventDefault();
+    create_acc_btn.addEventListener("click", function () {
       // This is for catching the error
       try {
         // This is for saving the user's information to the local session-storage
