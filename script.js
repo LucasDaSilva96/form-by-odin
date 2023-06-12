@@ -98,18 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // This function is for changing the welcome-content to match the user's information
   if (window.location.pathname.includes("/confirm.html")) {
-    // This is for making sure that the html is loaded before Document Object Manipulation
-    document.addEventListener("DOMContentLoaded", function () {
-      // This is for retrieving data from the local storage and displaying it on the confirm.html
-      confirm_h4.textContent = `Welcome ${localStorage.getItem("First_name")}`;
-      confirm_user_name.textContent = `${localStorage.getItem(
-        "First_name"
-      )} ${localStorage.getItem("Last_name")}`;
-      confirm_user_email.textContent = `${localStorage.getItem("User_email")}`;
-      confirm_user_phone_nr.textContent = `${localStorage.getItem(
-        "User_phone_nr"
-      )}`;
-    });
+    // This is for retrieving data from the local storage and displaying it on the confirm.html
+    confirm_h4.textContent = `Welcome ${localStorage.getItem("First_name")}`;
+    confirm_user_name.textContent = `${localStorage.getItem(
+      "First_name"
+    )} ${localStorage.getItem("Last_name")}`;
+    confirm_user_email.textContent = `${localStorage.getItem("User_email")}`;
+    confirm_user_phone_nr.textContent = `${localStorage.getItem(
+      "User_phone_nr"
+    )}`;
 
     // This is for clearing the local storage when the user clicks the back button.
     document.querySelector(".back-btn").addEventListener("click", function () {
