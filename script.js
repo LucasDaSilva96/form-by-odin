@@ -80,12 +80,12 @@ if (window.location.pathname.includes("/index.html")) {
   });
 
   // This is for saving the user's information to the local session-storage
-  create_acc_btn.addEventListener("click", function () {
-    sessionStorage.setItem("First_name", f_name);
-    sessionStorage.setItem("Last_name", l_name);
-    sessionStorage.setItem("User_phone_nr", phone_nr);
-    sessionStorage.setItem("User_email", email);
-  });
+  sessionStorage.setItem("First_name", f_name);
+  sessionStorage.setItem("Last_name", l_name);
+  sessionStorage.setItem("User_phone_nr", phone_nr);
+  sessionStorage.setItem("User_email", email);
+  // create_acc_btn.addEventListener("click", function () {
+  // });
 }
 
 // This function is for changing the welcome-content to match the user's information
@@ -114,7 +114,7 @@ if (window.location.pathname.includes("/confirm.html")) {
   document.querySelector("time").textContent = year;
 }
 
-if (window.location.pathname === "/form-by-odin/login.html") {
+if (window.location.pathname.includes("/form-by-odin")) {
   // This for updating the year on the footer automatically
   const date = new Date();
   const year = date.getFullYear();
