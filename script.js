@@ -79,7 +79,7 @@ if (window.location.pathname.includes("/index.html")) {
     email = user_email.value;
   });
 
-  // This is for saving the user's information to the local storage
+  // This is for saving the user's information to the local session-storage
   create_acc_btn.addEventListener("click", function () {
     sessionStorage.setItem("First_name", f_name);
     sessionStorage.setItem("Last_name", l_name);
