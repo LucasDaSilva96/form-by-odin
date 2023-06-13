@@ -144,7 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("time").textContent = year;
   }
 
-  if (window.location.pathname.includes("/form-by-odin")) {
+  if (
+    window.location.pathname.includes("/confirm.html") ||
+    window.location.pathname.includes("/login.html")
+  ) {
     // This for updating the year on the footer automatically
     const date = new Date();
     const year = date.getFullYear();
