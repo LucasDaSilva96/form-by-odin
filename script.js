@@ -53,20 +53,20 @@ if (window.location.pathname.includes("/index.html")) {
       password_confirm_label.textContent = "Confirm Password";
       create_acc_btn.disabled = false;
     }
-    // This is for making sure that the user must have password 1 === password 2 before
-    // creating an account
-    password_confirm_input.addEventListener("input", function () {
-      check_password_match(password_input, password_confirm_input);
-      if (
-        check_password_match(password_input, password_confirm_input) === false
-      ) {
-        password_confirm_label.textContent = "Incorrect match";
-        create_acc_btn.disabled = true;
-      } else {
-        password_confirm_label.textContent = "Confirm Password";
-        create_acc_btn.disabled = false;
-      }
-    });
+  });
+  // This is for making sure that the user must have password 1 === password 2 before
+  // creating an account
+  password_confirm_input.addEventListener("input", function () {
+    check_password_match(password_input, password_confirm_input);
+    if (
+      check_password_match(password_input, password_confirm_input) === false
+    ) {
+      password_confirm_label.textContent = "Incorrect match";
+      create_acc_btn.disabled = true;
+    } else {
+      password_confirm_label.textContent = "Confirm Password";
+      create_acc_btn.disabled = false;
+    }
   });
   // *****
   // This is for saving the user's first name
