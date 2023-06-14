@@ -9,15 +9,11 @@ const user_first_name = document.getElementById("first_name");
 const user_last_name = document.getElementById("last_name");
 const user_email = document.getElementById("email");
 const user_phone_nr = document.getElementById("phone_number");
-const confirm_h4 = document.querySelector(".confirm-h4");
-const confirm_user_name = document.querySelector(".user-name");
-const confirm_user_email = document.querySelector(".user-email");
-const confirm_user_phone_nr = document.querySelector(".user-phone-nr");
-const confirm_back_btn = document.querySelector(".back-btn");
+const form = document.getElementById("form");
 
 // Function to check if password 1 === password 2
+let is_a_match = false;
 const check_password_match = function (password1, password2) {
-  let is_a_match = false;
   const input_1 = password1.value.split("");
   const input_2 = password2.value.split("");
 
@@ -41,65 +37,78 @@ let l_name;
 let phone_nr;
 let email;
 
-// ************** TEST - Function ***************
+// This is for triggering the nested eventListener every time that the index.html is loaded
+window.onload = function () {
+  if (window.location.pathname.includes("index.html")) {
+    // *****
+    // This is for saving the user's first name
+    user_first_name.addEventListener("input", function () {
+      f_name = user_first_name.value;
+    });
 
-// *********************************************
+    // *****
+    // This is for saving the user's last name
+    user_last_name.addEventListener("input", function () {
+      l_name = user_last_name.value;
+    });
 
-// ********************************************
+    // *****
+    // This is for saving the user's phone nr
+    user_phone_nr.addEventListener("input", function () {
+      phone_nr = user_phone_nr.value;
+    });
 
-// *****
-// This is for saving the user's first name
-user_first_name.addEventListener("input", function () {
-  f_name = user_first_name.value;
-});
+    // *****
+    // This is for saving the user's email
+    user_email.addEventListener("input", function () {
+      email = user_email.value;
+    });
 
-// *****
-// This is for saving the user's last name
-user_last_name.addEventListener("input", function () {
-  l_name = user_last_name.value;
-});
+    // This is for making sure that the user must have password 1 === password 2 before
+    // creating an account
+    password_input.addEventListener("input", function () {
+      check_password_match(password_input, password_confirm_input);
+      if (
+        check_password_match(password_input, password_confirm_input) === false
+      ) {
+        password_confirm_label.textContent = "Incorrect match";
+        create_acc_btn.disabled = true;
+      } else {
+        password_confirm_label.textContent = "Confirm Password";
+        create_acc_btn.disabled = false;
+      }
+    });
+    // This is for making sure that the user must have password 1 === password 2 before
+    // creating an account
+    password_confirm_input.addEventListener("input", function () {
+      check_password_match(password_input, password_confirm_input);
+      if (
+        check_password_match(password_input, password_confirm_input) === false
+      ) {
+        password_confirm_label.textContent = "Incorrect match";
+        create_acc_btn.disabled = true;
+      } else {
+        password_confirm_label.textContent = "Confirm Password";
+        create_acc_btn.disabled = false;
+      }
+    });
 
-// *****
-// This is for saving the user's phone nr
-user_phone_nr.addEventListener("input", function () {
-  phone_nr = user_phone_nr.value;
-});
+    // This is for setting up the localStorage
+    create_acc_btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      // Store user information in localStorage
+      localStorage.setItem("firstName", f_name);
+      localStorage.setItem("lastName", l_name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("phone", phone_nr);
 
-// *****
-// This is for saving the user's email
-user_email.addEventListener("input", function () {
-  email = user_email.value;
-});
-
-// This is for making sure that the user must have password 1 === password 2 before
-// creating an account
-password_input.addEventListener("input", function () {
-  check_password_match(password_input, password_confirm_input);
-  if (check_password_match(password_input, password_confirm_input) === false) {
-    password_confirm_label.textContent = "Incorrect match";
-    create_acc_btn.disabled = true;
-  } else {
-    password_confirm_label.textContent = "Confirm Password";
-    create_acc_btn.disabled = false;
+      if (is_a_match) {
+        window.location.href = "confirm.html";
+      }
+    });
   }
-});
-// This is for making sure that the user must have password 1 === password 2 before
-// creating an account
-password_confirm_input.addEventListener("input", function () {
-  check_password_match(password_input, password_confirm_input);
-  if (check_password_match(password_input, password_confirm_input) === false) {
-    password_confirm_label.textContent = "Incorrect match";
-    create_acc_btn.disabled = true;
-  } else {
-    password_confirm_label.textContent = "Confirm Password";
-    create_acc_btn.disabled = false;
-  }
-});
-
-if (
-  window.location.pathname.includes("/login.html") ||
-  window.location.pathname.includes("/confirm.html")
-) {
+};
+if (window.location.pathname.includes("/login.html")) {
   // This for updating the year on the footer automatically
   const date = new Date();
   const year = date.getFullYear();
