@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.icon.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+
     <title>Confirmation</title>
   </head>
-
   <body>
     <header><h1>AMG - Group</h1></header>
     <main class="body-2">
@@ -68,5 +67,29 @@
         || <time>2023</time></span
       >
     </main>
+    <script>
+      window.alert = function () {};
+      const confirmH4 = document.querySelector(".confirm-h4");
+      const confirmFirst_Name = document.querySelector(".user-name");
+      const confirmEmail = document.querySelector(".user-email");
+      const confirmPhoneNr = document.querySelector(".user-phone-nr");
+      const back_btn = document.querySelector(".back-btn");
+      confirmH4.textContent = `Welcome ${window.localStorage.getItem(
+        "firstName"
+      )}`;
+      confirmFirst_Name.textContent = `${window.localStorage.getItem(
+        "firstName"
+      )} ${window.localStorage.getItem("lastName")}`;
+      confirmEmail.textContent = window.localStorage.getItem("email");
+      confirmPhoneNr.textContent = window.localStorage.getItem("phone");
+
+      back_btn.addEventListener("click", function () {
+        window.localStorage.clear();
+      });
+
+      const date = new Date();
+      const year = date.getFullYear();
+      document.querySelector("time").textContent = year;
+    </script>
   </body>
 </html>
